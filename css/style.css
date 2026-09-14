@@ -1,324 +1,221 @@
-/* ========================================
-   BASE
-======================================== */
+/* ==========================================================
+   Isaac Fontenelle — Portfolio Visual Identity
+   Fonts: Fraunces (display) + Inter (functional) — loaded via <link> in <head>
+   ========================================================== */
 
-* {
-    box-sizing: border-box;
+:root{
+  --paper: #F2EEE3;       /* main background — warm parchment, not stark white */
+  --paper-soft: #E8E2D2;  /* image placeholder / subtle panel background */
+  --ink: #211D16;         /* primary text — warm near-black */
+  --ink-dim: #6E6656;     /* secondary / muted text */
+  --line: #D9D1BC;        /* hairline borders and dividers */
+  --accent: #7C5A34;      /* links, hover states, small labels */
+  --accent-soft: #A9835A; /* lighter accent, decorative use */
 }
 
-html {
-    scroll-behavior: smooth;
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
 }
 
-body {
-    margin: 0;
-    background: #f5f1ea;
-    color: #24211e;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
+a{ color:inherit; text-decoration:none; }
+img{ display:block; max-width:100%; }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+/* ---------- Header ---------- */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 32px;
+  max-width:1280px;
+  margin:0 auto;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+.site-name{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  font-size:1.02rem;
+  letter-spacing:0.01em;
 }
 
-img {
-    display: block;
-    max-width: 100%;
+.main-nav{ display:flex; gap:32px; }
+
+.main-nav a{
+  font-size:0.8rem;
+  letter-spacing:0.06em;
+  color:var(--ink-dim);
+  transition:color .2s ease;
+  position:relative;
 }
 
-
-/* ========================================
-   HEADER
-======================================== */
-
-.site-header {
-    width: 100%;
-    padding: 28px 5vw;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.main-nav a::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-5px;
+  height:1px;
+  background:var(--accent);
+  transform:scaleX(0);
+  transform-origin:right;
+  transition:transform .25s ease;
 }
 
-.site-name {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
-    letter-spacing: 0.08em;
+.main-nav a:hover{ color:var(--ink); }
+.main-nav a:hover::after{ transform:scaleX(1); transform-origin:left; }
+
+/* ---------- Hero (the artwork itself — visible with no scrolling) ---------- */
+.hero{
+  position:relative;
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 32px 20px;
 }
 
-.main-nav {
-    display: flex;
-    gap: 30px;
+.hero-frame{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  background:var(--paper-soft);
 }
 
-.main-nav a {
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    transition: opacity 0.2s ease;
+.hero-frame img{
+  width:100%;
+  height:66vh;
+  min-height:420px;
+  max-height:760px;
+  object-fit:cover;
+  object-position:center 20%;
+  transition:transform .6s ease;
 }
 
-.main-nav a:hover {
-    opacity: 0.5;
+.hero-frame:hover img{ transform:scale(1.015); }
+
+.hero-caption{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  padding:28px 32px;
+  background:linear-gradient(to top, rgba(20,17,11,0.72), rgba(20,17,11,0));
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:24px;
+  flex-wrap:wrap;
 }
 
+.hero-caption .eyebrow{ color:#D9C9A8; margin-bottom:6px; }
 
-/* ========================================
-   INTRO
-======================================== */
-
-.intro {
-    max-width: 720px;
-    margin: 80px auto 55px;
-    padding: 0 5vw;
-    text-align: center;
+.hero-caption h1{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:clamp(1.5rem, 3vw, 2.1rem);
+  color:#F5EFE1;
 }
 
-.eyebrow {
-    margin: 0 0 22px;
-
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #746e66;
+.hero-caption .intro-text{
+  color:#D9C9A8;
+  font-size:0.92rem;
 }
 
-.intro h1 {
-    margin: 0;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(32px, 4vw, 52px);
-    font-weight: normal;
-    line-height: 1.08;
-    letter-spacing: -0.025em;
+.eyebrow{
+  font-size:0.75rem;
+  letter-spacing:0.12em;
+  font-weight:500;
+  color:var(--accent);
 }
 
-intro-text {
-    max-width: 480px;
-    margin: 18px auto 0;
+/* ---------- Selected work ---------- */
+main{ max-width:1280px; margin:0 auto; padding:0 32px; }
 
-    font-size: 12px;
-    color: #625d57;
+.selected-work{ padding:56px 0 90px; }
+
+.section-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-top:1px solid var(--line);
+  padding-top:32px;
+  margin-bottom:36px;
 }
 
-
-/* ========================================
-   FEATURED PROJECT
-======================================== */
-
-.featured-project {
-    width: 90vw;
-    max-width: 1500px;
-    margin: 0 auto 160px;
+.section-heading a{
+  font-size:0.85rem;
+  color:var(--ink-dim);
+  border-bottom:1px solid var(--line);
+  padding-bottom:2px;
+  transition:color .2s ease, border-color .2s ease;
 }
 
-.featured-project > a {
-    display: block;
+.section-heading a:hover{ color:var(--accent); border-color:var(--accent); }
+
+.work-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:28px;
 }
 
-.featured-image {
-    width: 100%;
-    overflow: hidden;
+.work-item{ display:block; }
+
+.work-item img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  background:var(--paper-soft);
+  transition:transform .5s ease;
 }
 
-.featured-image img {
-    width: 100%;
-    height: auto;
+.work-item:hover img{ transform:scale(1.02); }
 
-    transition: transform 0.5s ease;
+.work-caption{
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  margin-top:14px;
 }
 
-.featured-project:hover .featured-image img {
-    transform: scale(1.015);
+.work-caption h3{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  font-size:1.02rem;
+  color:var(--ink);
+  margin-bottom:3px;
 }
 
-.project-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    margin-top: 22px;
+.work-caption p{
+  font-size:0.83rem;
+  color:var(--ink-dim);
 }
 
-.project-category {
-    margin: 0 0 5px;
-
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    color: #746e66;
+/* ---------- Footer ---------- */
+.site-footer{
+  border-top:1px solid var(--line);
+  padding:28px 32px;
+  max-width:1280px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  color:var(--ink-dim);
+  font-size:0.82rem;
 }
 
-.project-info h2 {
-    margin: 0;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 28px;
-    font-weight: normal;
+/* ---------- Responsive ---------- */
+@media (max-width:800px){
+  .work-grid{ grid-template-columns:repeat(2, 1fr); gap:16px; }
+  .hero-frame img{ height:52vh; min-height:340px; }
+  .site-header{ flex-direction:column; gap:14px; align-items:flex-start; }
 }
 
-.project-description {
-    margin: 5px 0 0;
-
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    color: #746e66;
+@media (max-width:520px){
+  .work-grid{ grid-template-columns:1fr; }
+  .hero-caption{ flex-direction:column; align-items:flex-start; gap:8px; }
+  .site-footer{ flex-direction:column; gap:6px; }
 }
 
-
-/* ========================================
-   SELECTED WORK
-======================================== */
-
-.selected-work {
-    width: 90vw;
-    max-width: 1500px;
-    margin: 0 auto 180px;
-}
-
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-
-    margin-bottom: 35px;
-}
-
-.section-heading .eyebrow {
-    margin: 0;
-}
-
-.section-heading > a {
-    font-size: 10px;
-    letter-spacing: 0.14em;
-
-    transition: opacity 0.2s ease;
-}
-
-.section-heading > a:hover {
-    opacity: 0.5;
-}
-
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.work-item {
-    display: block;
-}
-
-.work-item img {
-    width: 100%;
-    height: auto;
-
-    transition: opacity 0.3s ease;
-}
-
-.work-item:hover img {
-    opacity: 0.8;
-}
-
-.work-caption {
-    margin-top: 15px;
-}
-
-.work-caption h3 {
-    margin: 0 0 3px;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 19px;
-    font-weight: normal;
-}
-
-.work-caption p {
-    margin: 0;
-
-    font-size: 10px;
-    letter-spacing: 0.05em;
-    color: #746e66;
-}
-
-
-/* ========================================
-   FOOTER
-======================================== */
-
-.site-footer {
-    width: 90vw;
-    max-width: 1500px;
-
-    margin: 0 auto;
-    padding: 30px 0 45px;
-
-    border-top: 1px solid #d8d1c8;
-
-    display: flex;
-    justify-content: space-between;
-
-    font-size: 10px;
-    letter-spacing: 0.05em;
-    color: #746e66;
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 700px) {
-
-    .site-header {
-        padding: 22px 6vw;
-
-        align-items: flex-start;
-    }
-
-    .main-nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-    }
-
-    .main-nav a {
-        font-size: 9px;
-    }
-
-    .intro {
-        margin-top: 90px;
-        margin-bottom: 70px;
-    }
-
-    .intro h1 {
-        font-size: 38px;
-    }
-
-    .featured-project,
-    .selected-work {
-        width: 88vw;
-    }
-
-    .project-info {
-        display: block;
-    }
-
-    .project-description {
-        margin-top: 12px;
-    }
-
-    .work-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .site-footer {
-        width: 88vw;
-
-        display: block;
-    }
-
-    .site-footer p:last-child {
-        margin-top: 5px;
-    }
+@media (prefers-reduced-motion: reduce){
+  *{ transition:none !important; }
 }
