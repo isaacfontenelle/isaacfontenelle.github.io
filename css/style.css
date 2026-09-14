@@ -87,7 +87,7 @@ img {
     margin: 0;
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(38px, 5vw, 68px);
+    font-size: clamp(32px, 4vw, 52px);
     font-weight: normal;
     line-height: 1.08;
     letter-spacing: -0.025em;
@@ -95,9 +95,9 @@ img {
 
 .intro-text {
     max-width: 480px;
-    margin-top: 32px;
+    margin-top: 18px;
 
-    font-size: 14px;
+    font-size: 12px;
     color: #625d57;
 }
 
