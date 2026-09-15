@@ -200,10 +200,118 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
   font-size:0.82rem;
 }
 
+/* ---------- Page heading (used on Work / About / Contact) ---------- */
+.page-heading{
+  max-width:1280px;
+  margin:0 auto;
+  padding:64px 32px 0;
+}
+
+.page-heading h1{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  font-style:italic;
+  font-size:clamp(2rem, 4vw, 2.8rem);
+  margin-bottom:14px;
+  color:var(--ink);
+}
+
+.page-heading p{
+  color:var(--ink-dim);
+  max-width:60ch;
+  font-size:1rem;
+}
+
+/* ---------- All work (work.html) ---------- */
+.all-work{ padding:48px 0 90px; }
+
+/* reuses .work-grid / .work-item / .work-caption from Selected Work above */
+
+/* ---------- Individual project page ---------- */
+.back-link{
+  display:inline-block;
+  margin:28px 32px 0;
+  font-size:0.85rem;
+  color:var(--ink-dim);
+  border-bottom:1px solid var(--line);
+  padding-bottom:2px;
+  transition:color .2s ease, border-color .2s ease;
+}
+
+.back-link:hover{ color:var(--accent); border-color:var(--accent); }
+
+.project-hero{
+  max-width:1280px;
+  margin:0 auto;
+  padding:24px 32px 0;
+}
+
+.project-hero .frame{
+  overflow:hidden;
+  background:var(--paper-soft);
+}
+
+.project-hero .frame img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.project-header{
+  max-width:1280px;
+  margin:0 auto;
+  padding:40px 32px 0;
+  border-top:1px solid var(--line);
+  margin-top:32px;
+}
+
+.project-header h1{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  font-size:clamp(1.8rem, 3.5vw, 2.4rem);
+  color:var(--ink);
+  margin-bottom:18px;
+}
+
+.project-description{
+  color:var(--ink-dim);
+  max-width:65ch;
+  font-size:1rem;
+  margin-bottom:8px;
+}
+
+.process-section{
+  max-width:1280px;
+  margin:0 auto;
+  padding:64px 32px 96px;
+}
+
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:28px;
+}
+
+.process-grid figure{ margin:0; }
+
+.process-grid img{
+  width:100%;
+  height:auto;
+  display:block;
+  background:var(--paper-soft);
+}
+
+.process-grid figcaption{
+  font-size:0.8rem;
+  color:var(--ink-dim);
+  margin-top:10px;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width:800px){
   .work-grid{ grid-template-columns:repeat(2, 1fr); gap:16px; }
   .site-header{ flex-direction:column; gap:14px; align-items:flex-start; }
+  .process-grid{ grid-template-columns:1fr; }
 }
 
 @media (max-width:520px){
