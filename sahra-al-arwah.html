@@ -23,16 +23,34 @@
 
 <a href="work.html" class="back-link">← Back to Work</a>
 
-<!-- MAIN IMAGE: this reuses the same file already used as the thumbnail on
-     the home page and work.html — no need to upload it again. -->
-<section class="project-hero">
-  <div class="frame">
-    <img src="sahra-al-arwah.jpg" alt="Sahra' al-Arwāḥ — The Undead Witch, final artwork">
-  </div>
+<!-- GALLERY: every image from the project, in order, no captions.
+     To add or remove a piece, just add or remove a <figure> block —
+     each one keeps the image's own proportions, nothing gets cropped. -->
+<section class="project-gallery">
+
+  <figure>
+    <img src="The-undead-Witch-1.png" alt="Sahra' al-Arwāḥ — The Undead Witch">
+  </figure>
+  <figure>
+    <img src="The-undead-Witch-sketches.png" alt="Sahra' al-Arwāḥ — The Undead Witch, sketches">
+  </figure>
+  <figure>
+    <img src="Ghost-Assassin-1.png" alt="Sahra' al-Arwāḥ — Ghost Assassin">
+  </figure>
+  <figure>
+    <img src="Ghost-Assassin-sketches.png" alt="Sahra' al-Arwāḥ — Ghost Assassin, sketches">
+  </figure>
+  <figure>
+    <img src="Sapo-mágico-Ruhbaqa.png" alt="Sahra' al-Arwāḥ — Sapo Mágico Ruhbaqa">
+  </figure>
+  <figure>
+    <img src="Sapo-mágico-Ruhbaqa-sketch.png" alt="Sahra' al-Arwāḥ — Sapo Mágico Ruhbaqa, sketch">
+  </figure>
+
 </section>
 
-<!-- TITLE + DESCRIPTION: replace the paragraph below with your own text —
-     2 to 4 sentences on what this project/world is about. -->
+<!-- TITLE + TEXT: this sits at the very end of the page.
+     Replace the paragraph below with your own text. -->
 <section class="project-header">
   <p class="eyebrow">PERSONAL PROJECT</p>
   <h1>Sahra' al-Arwāḥ</h1>
@@ -42,59 +60,12 @@
   </p>
 </section>
 
-<!-- PROCESS: one block per character. To add another character, copy an
-     entire <div class="character-block">...</div> and edit it. -->
-<section class="process-section">
-  <p class="eyebrow" style="margin-bottom:28px;">CHARACTERS &amp; PROCESS</p>
-
-  <div class="character-block">
-    <h2>The Undead Witch</h2>
-    <div class="process-grid">
-      <figure>
-        <img src="The-undead-Witch-1.png" alt="The Undead Witch — final artwork">
-        <figcaption>Final artwork</figcaption>
-      </figure>
-      <figure>
-        <img src="The-undead-Witch-sketches.png" alt="The Undead Witch — sketches">
-        <figcaption>Sketches</figcaption>
-      </figure>
-    </div>
-  </div>
-
-  <div class="character-block">
-    <h2>Ghost Assassin</h2>
-    <div class="process-grid">
-      <figure>
-        <img src="Ghost-Assassin-1.png" alt="Ghost Assassin — final artwork">
-        <figcaption>Final artwork</figcaption>
-      </figure>
-      <figure>
-        <img src="Ghost-Assassin-sketches.png" alt="Ghost Assassin — sketches">
-        <figcaption>Sketches</figcaption>
-      </figure>
-    </div>
-  </div>
-
-  <div class="character-block">
-    <h2>Sapo Mágico Ruhbaqa</h2>
-    <div class="process-grid">
-      <figure>
-        <img src="Sapo-mágico-Ruhbaqa.png" alt="Sapo Mágico Ruhbaqa — final artwork">
-        <figcaption>Final artwork</figcaption>
-      </figure>
-      <figure>
-        <img src="Sapo-mágico-Ruhbaqa-sketch.png" alt="Sapo Mágico Ruhbaqa — sketch">
-        <figcaption>Sketch</figcaption>
-      </figure>
-    </div>
-  </div>
-
-</section>
-
 <footer class="site-footer">
   <p>© 2026 Isaac Fontenelle</p>
   <p>Character & Concept Artist</p>
 </footer>
+
+<script src="js/lightbox.js" defer></script>
 
 </body>
 </html>
