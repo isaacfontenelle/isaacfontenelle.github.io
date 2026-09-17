@@ -1,12 +1,16 @@
 /* ==========================================================
-   Lightbox — click a gallery image to view it fullscreen.
-   Works on any image inside an element with class "project-gallery".
-   Include this file on every page that has a gallery:
+   Site interactions — include on every project page:
    <script src="js/lightbox.js" defer></script>
+
+   1) Lightbox — click a gallery image to view it fullscreen.
+      Works on any image inside an element with class "project-gallery".
+   2) Back to top — a floating button that appears after scrolling
+      down, and smooth-scrolls back to the top of the page on click.
    ========================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* ---- Lightbox ---- */
   var overlay = document.createElement('div');
   overlay.className = 'lightbox-overlay';
   overlay.innerHTML =
@@ -43,5 +47,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeLightbox();
+  });
+
+  /* ---- Back to top ---- */
+  var backToTop = document.createElement('button');
+  backToTop.className = 'back-to-top';
+  backToTop.setAttribute('aria-label', 'Back to top');
+  backToTop.innerHTML = '&uarr;';
+  document.body.appendChild(backToTop);
+
+  function toggleBackToTop() {
+    if (window.scrollY > 500) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', toggleBackToTop);
+  toggleBackToTop();
+
+  backToTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
