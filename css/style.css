@@ -276,6 +276,19 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
   cursor:zoom-in;
 }
 
+/* Modifier: multi-column masonry, for collections of unrelated pieces
+   (e.g. sketch-collection.html) instead of one full-width image after another. */
+.project-gallery.grid-layout{
+  display:block;
+  column-count:4;
+  column-gap:24px;
+}
+
+.project-gallery.grid-layout figure{
+  break-inside:avoid;
+  margin:0 0 24px;
+}
+
 /* ---------- Lightbox ---------- */
 .lightbox-overlay{
   position:fixed;
@@ -352,12 +365,14 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
 @media (max-width:800px){
   .work-grid{ grid-template-columns:repeat(2, 1fr); gap:16px; }
   .site-header{ flex-direction:column; gap:14px; align-items:flex-start; }
+  .project-gallery.grid-layout{ column-count:3; }
 }
 
 @media (max-width:520px){
   .work-grid{ grid-template-columns:1fr; }
   .hero-caption{ flex-direction:column; align-items:flex-start; gap:8px; }
   .site-footer{ flex-direction:column; gap:6px; }
+  .project-gallery.grid-layout{ column-count:2; }
 }
 
 @media (prefers-reduced-motion: reduce){
