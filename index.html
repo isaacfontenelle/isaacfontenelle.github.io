@@ -22,21 +22,33 @@
 </header>
 
 <!--
-  HERO: this should link to your most recently posted project.
-  Whenever you post something new, swap the image "src" AND the "href"
-  below so they point to that new project — keep them in sync.
+  HERO CAROUSEL: cycles through a few of your strongest pieces automatically.
+  Each <a> is one slide — its "href" is where clicking that slide takes people.
+  To add a project, copy one whole <a class="hero-slide">...</a> block and
+  edit the href/src/alt. To remove one, delete its block. The first slide in
+  the list should keep the "active" class (only one slide should have it).
 -->
 <section class="hero">
-  <a href="in-search.html" class="hero-frame">
-    <img src="in-search.png" alt="In Search — personal project by Isaac Fontenelle">
+  <div class="hero-frame">
+    <div class="hero-slides">
+      <a href="in-search.html" class="hero-slide active">
+        <img src="in-search.png" alt="In Search">
+      </a>
+      <a href="sahra-al-arwah.html" class="hero-slide">
+        <img src="sahra-al-arwah.jpg" alt="Sahra' al-Arwāḥ">
+      </a>
+      <a href="lonely-garden.html" class="hero-slide">
+        <img src="lonely-garden.jpg" alt="Lonely Garden">
+      </a>
+      <a href="sketch-collection.html" class="hero-slide">
+        <img src="sketch-collection.jpg" alt="Sketch Collection">
+      </a>
+    </div>
     <div class="hero-caption">
-      <div>
-        <p class="eyebrow">PERSONAL PROJECT · IN SEARCH</p>
-        <h1>Isaac Fontenelle</h1>
-      </div>
+      <h1>Isaac Fontenelle</h1>
       <p class="intro-text">Character design · Concept art · Visual development</p>
     </div>
-  </a>
+  </div>
 </section>
 
 <main>
@@ -95,6 +107,8 @@
   <p>© 2026 Isaac Fontenelle</p>
   <p>Character & Concept Artist</p>
 </footer>
+
+<script src="js/hero-carousel.js" defer></script>
 
 </body>
 </html>
