@@ -99,7 +99,7 @@ img{ display:block; max-width:100%; }
   inset:0;
   display:block;
   opacity:0;
-  transition:opacity 1.6s ease-in-out;
+  transition:opacity 2.4s cubic-bezier(0.45, 0, 0.2, 1);
   overflow:hidden;
 }
 
@@ -111,10 +111,10 @@ img{ display:block; max-width:100%; }
   object-fit:cover;
   display:block;
   transform:scale(1);
-  transition:transform 7s ease-out;
+  transition:transform 9s ease-out;
 }
 
-.hero-slide.active img{ transform:scale(1.06); }
+.hero-slide.active img{ transform:scale(1.03); }
 
 .hero-caption{
   position:absolute;
