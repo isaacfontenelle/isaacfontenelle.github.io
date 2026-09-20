@@ -536,15 +536,12 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
   max-width:1280px;
   margin:0 auto;
   padding:8px 32px 0;
-  display:flex;
-  flex-direction:column;
-  gap:24px;
 }
 
-.queue-month{
-  border-top:1px solid var(--line);
-  padding-top:24px;
-}
+.queue .section-heading{ margin-bottom:28px; }
+
+.queue-month{ margin-bottom:22px; }
+.queue-month:last-child{ margin-bottom:0; }
 
 .queue-list{
   list-style:none;
@@ -573,53 +570,83 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
 
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(2, 1fr);
+  grid-template-columns:repeat(3, 1fr);
   gap:28px;
 }
 
-.service-card{
-  border-top:1px solid var(--line);
-  padding-top:18px;
+.service-visual{
+  position:relative;
+  overflow:hidden;
+  background:var(--paper-soft);
+  aspect-ratio:4/5;
+}
+
+.service-visual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.price-tag{
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  background:rgba(33,29,22,0.85);
+  color:#F5EFE1;
+  font-size:0.7rem;
+  letter-spacing:0.02em;
+  padding:5px 9px;
+  border-radius:2px;
 }
 
 .service-card h3{
   font-family:'Fraunces', serif;
   font-weight:500;
-  font-size:1.08rem;
-  margin-bottom:8px;
+  font-size:1.02rem;
+  margin:12px 0 4px;
 }
 
 .service-card p{
   color:var(--ink-dim);
-  font-size:0.9rem;
+  font-size:0.88rem;
 }
 
 .process{ padding:56px 0 8px; }
 
-.process-list{ list-style:none; }
-
-.process-list li{
+.process-list{
+  list-style:none;
   display:flex;
-  gap:22px;
-  padding:22px 0;
-  border-top:1px solid var(--line);
+  flex-direction:column;
+  gap:34px;
 }
 
-.process-list li:last-child{ border-bottom:1px solid var(--line); }
-
 .process-num{
+  display:block;
   font-family:'Fraunces', serif;
   font-style:italic;
-  font-size:1.3rem;
+  font-size:1.6rem;
   color:var(--accent-soft);
-  min-width:2.2ch;
+  line-height:1;
+  margin-bottom:6px;
 }
 
 .process-list h3{
   font-family:'Fraunces', serif;
   font-weight:500;
-  font-size:1.02rem;
-  margin-bottom:6px;
+  font-size:1.05rem;
+  margin-bottom:8px;
+  position:relative;
+  padding-bottom:10px;
+  display:inline-block;
+}
+
+.process-list h3::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:0;
+  width:26px; height:2px;
+  background:var(--accent);
 }
 
 .process-list p{
@@ -630,50 +657,69 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
 
 .rates{ padding:56px 0 8px; }
 
-.rates-intro{
-  color:var(--ink-dim);
-  font-size:0.95rem;
-  max-width:64ch;
-  margin-bottom:22px;
+.pricing-service{ margin-bottom:32px; }
+.pricing-service:last-of-type{ margin-bottom:0; }
+
+.pricing-service > h3{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  font-size:1.05rem;
+  margin-bottom:16px;
 }
 
-.rate-factors{
-  list-style:none;
+.pricing-columns{
   display:grid;
-  gap:14px;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  max-width:520px;
 }
 
-.rate-factors li{
+.pricing-column h4{
+  font-size:0.8rem;
+  letter-spacing:0.04em;
+  color:var(--accent);
+  margin-bottom:10px;
+  font-weight:500;
+}
+
+.price-list{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  max-width:420px;
+}
+
+.price-list li{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
   font-size:0.92rem;
+}
+
+.price-list li span:first-child{ color:var(--ink-dim); }
+.price-list li span:last-child{ font-weight:600; color:var(--ink); }
+
+.pricing-note{
+  font-size:0.85rem;
   color:var(--ink-dim);
-  padding-left:18px;
-  position:relative;
+  margin-top:16px;
+  max-width:64ch;
 }
-
-.rate-factors li::before{
-  content:"";
-  position:absolute;
-  left:0; top:0.55em;
-  width:6px; height:6px;
-  background:var(--accent-soft);
-  border-radius:50%;
-}
-
-.rate-factors strong{ color:var(--ink); font-weight:600; }
 
 .terms{ padding:56px 0 8px; }
 
-.terms-list{ display:flex; flex-direction:column; }
+.terms-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
 
 .terms-row{
   display:grid;
   grid-template-columns:180px 1fr;
   gap:24px;
-  padding:18px 0;
-  border-top:1px solid var(--line);
 }
-
-.terms-row:last-child{ border-bottom:1px solid var(--line); }
 
 .terms-row dt{
   font-weight:600;
@@ -774,6 +820,7 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
   .project-gallery.grid-layout{ column-count:2; }
   .hero-frame{ height:42vh; min-height:300px; }
   .services-grid{ grid-template-columns:1fr; }
+  .pricing-columns{ grid-template-columns:1fr; }
   .about-hero{ grid-template-columns:1fr; }
   .about-photo{ max-width:160px; }
 }
