@@ -586,6 +586,7 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
   height:100%;
   object-fit:cover;
   display:block;
+  cursor:zoom-in;
 }
 
 .price-tag{
