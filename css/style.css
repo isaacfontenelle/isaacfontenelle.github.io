@@ -466,18 +466,18 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
 
 .timeline li{
   display:flex;
-  gap:22px;
+  flex-direction:column;
+  gap:4px;
   padding:14px 0;
 }
 
 .timeline li:last-child{ border-bottom:1px solid var(--line); padding-bottom:22px; }
 
 .timeline-year{
-  font-size:0.8rem;
-  letter-spacing:0.04em;
+  font-size:0.78rem;
+  letter-spacing:0.06em;
+  font-weight:500;
   color:var(--accent);
-  min-width:8ch;
-  padding-top:2px;
 }
 
 .timeline h3{
@@ -531,11 +531,49 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
 
 .status-closed .status-dot{ background:#A9583F; } /* muted rust — closed */
 
+/* ---------- Commission queue ---------- */
+.queue{
+  max-width:1280px;
+  margin:0 auto;
+  padding:8px 32px 0;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.queue-month{
+  border-top:1px solid var(--line);
+  padding-top:24px;
+}
+
+.queue-list{
+  list-style:none;
+  margin-top:16px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.queue-list li{
+  font-size:0.92rem;
+  color:var(--ink-dim);
+}
+
+.queue-list li strong{
+  color:var(--ink);
+  font-weight:600;
+  margin-right:6px;
+}
+
+.queue-list .queue-current{ color:var(--ink); }
+
+.queue-open-slot{ color:var(--accent); font-weight:600; }
+
 .services{ padding:24px 0 8px; }
 
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(2, 1fr);
   gap:28px;
 }
 
@@ -680,6 +718,43 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
 }
 
 .cta-button:hover{ background:var(--accent); }
+
+.commission-form{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  text-align:left;
+  margin-top:8px;
+}
+
+.commission-form input,
+.commission-form textarea{
+  font-family:'Inter', sans-serif;
+  font-size:0.95rem;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  color:var(--ink);
+  border-radius:2px;
+}
+
+.commission-form textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.commission-form input:focus,
+.commission-form textarea:focus{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+  border-color:var(--accent);
+}
+
+.commission-form button{
+  align-self:flex-start;
+  border:none;
+  cursor:pointer;
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width:800px){
