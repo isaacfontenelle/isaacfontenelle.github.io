@@ -27,17 +27,36 @@
   <section class="page-heading">
     <p class="eyebrow">COMMISSIONS</p>
     <h1>Concept art & character design for hire</h1>
-    <p>I work with indie studios, writers, and game teams to design characters and worlds from the ground up — from early exploration sketches to production-ready turnarounds.</p>
+    <p>I take on personal commissions — original characters, OCs, and character pieces for individual clients. If you have a character in mind and want to see them come to life, this is the place.</p>
+  </section>
 
-    <!--
-      STATUS BADGE
-      To close commissions, swap the class "status-open" for "status-closed"
-      on the div below, and edit the text.
-    -->
-    <div class="status-badge status-open">
-      <span class="status-dot"></span>
-      Open for new projects — next available slot: [MÊS / ANO]
+  <!-- ============ QUEUE ============
+       One <div class="queue-month"> per month. The current/open month gets
+       the full <ul class="queue-list"> underneath; a future month can just
+       show the status badge on its own until it's actually being worked.
+       Update the numbers (X/4), the month, and the @handles as the queue moves. -->
+  <section class="queue">
+
+    <div class="queue-month">
+      <div class="status-badge status-open">
+        <span class="status-dot"></span>
+        Open for new projects — 3/4 slots — October
+      </div>
+      <ul class="queue-list">
+        <li class="queue-current"><strong>Working on:</strong> @handle — character piece</li>
+        <li><strong>Next:</strong> @handle</li>
+        <li><strong>Next:</strong> @handle</li>
+        <li><strong>Next:</strong> <span class="queue-open-slot">Open</span></li>
+      </ul>
     </div>
+
+    <div class="queue-month">
+      <div class="status-badge status-open">
+        <span class="status-dot"></span>
+        Open for new projects — 0/4 slots — November
+      </div>
+    </div>
+
   </section>
 
   <!-- ============ SERVICES ============ -->
@@ -46,6 +65,11 @@
       <p class="eyebrow">WHAT I OFFER</p>
     </div>
     <div class="services-grid">
+
+      <div class="service-card">
+        <h3>Illustration</h3>
+        <p>A single finished piece featuring your character — OC, fan art, or existing design — with clean lines and full color, ready to use as an avatar, banner, or just to have.</p>
+      </div>
 
       <div class="service-card">
         <h3>Character Design</h3>
@@ -150,11 +174,22 @@
     </dl>
   </section>
 
-  <!-- ============ CONTACT CTA ============ -->
+  <!-- ============ CONTACT CTA ============
+       FORMSPREE SETUP: create a free account at formspree.io, make a new
+       form, and copy the endpoint it gives you (looks like
+       https://formspree.io/f/xxxxxxxx). Paste it into the "action" below,
+       replacing YOUR_FORM_ID. Formspree will ask you to click a confirmation
+       link in your email the first time someone submits — that's normal. -->
   <section class="cta">
     <h2>Have a project in mind?</h2>
-    <p>Send a short brief — what you need, references if you have them, and your timeline — and I'll reply with availability and a quote.</p>
-    <a href="mailto:isaacfontenelle.profissional@gmail.com?subject=Commission%20Inquiry" class="cta-button">Send a message</a>
+    <p>Send a short message — what you're looking for, any references, and your timeline — and I'll reply by email with availability and a quote.</p>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="commission-form">
+      <input type="text" name="name" placeholder="Your name or @handle" required>
+      <input type="email" name="email" placeholder="Your email (so I can reply)" required>
+      <textarea name="message" placeholder="What are you looking for? References, timeline, budget..." required></textarea>
+      <input type="text" name="_gotcha" style="display:none">
+      <button type="submit" class="cta-button">Send message</button>
+    </form>
   </section>
 
 </main>
