@@ -448,7 +448,7 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
   margin-bottom:20px;
 }
 
-.about-socials{ display:flex; gap:22px; }
+.about-socials{ display:flex; flex-wrap:wrap; row-gap:10px; column-gap:22px; }
 
 .about-socials a{
   font-size:0.85rem;
@@ -467,11 +467,10 @@ main{ max-width:1280px; margin:0 auto; padding:0 32px; }
 .timeline li{
   display:flex;
   gap:22px;
-  padding:22px 0;
-  border-top:1px solid var(--line);
+  padding:14px 0;
 }
 
-.timeline li:last-child{ border-bottom:1px solid var(--line); }
+.timeline li:last-child{ border-bottom:1px solid var(--line); padding-bottom:22px; }
 
 .timeline-year{
   font-size:0.8rem;
