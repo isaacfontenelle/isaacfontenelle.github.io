@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.project-gallery img').forEach(function (img) {
+  document.querySelectorAll('.project-gallery img, .service-visual img').forEach(function (img) {
     img.addEventListener('click', function () {
       openLightbox(img.currentSrc || img.src, img.alt);
     });
